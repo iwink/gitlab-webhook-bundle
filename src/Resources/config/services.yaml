@@ -1,0 +1,18 @@
+services:
+    # Default configuration for services in this file.
+    _defaults:
+        # Automatically inject dependencies.
+        autowire: true
+        # Automatically register commands, event subscribers, etc.
+        autoconfigure: true
+        # Disable public services by default, override manually if a service needs to be retrievable by the container.
+        public: false
+
+    # Register service automatically.
+    Kirra\Bundle\GitLabWebhookBundle\:
+        resource: '../../*'
+        exclude: '../../{DependencyInjection,KirraGitLabWebhookBundle.php}'
+
+    Kirra\Bundle\GitLabWebhookBundle\EventSubscriber\GitLabWebhookSubscriber:
+        arguments:
+            $environment: '%kernel.environment%'

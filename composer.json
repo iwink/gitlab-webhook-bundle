@@ -1,0 +1,36 @@
+{
+	"name": "kirra/gitlab-webhook-bundle",
+	"type": "symfony-bundle",
+	"description": "GitLab Webhook Symfony bundle.",
+	"keywords": [
+		"Symfony",
+		"GitLab",
+		"webhook"
+	],
+	"license": "proprietary",
+	"require": {
+		"php": ">=7.4",
+		"ext-json": "*",
+		"doctrine/annotations": "^1.11",
+		"symfony/config": "^5.0",
+		"symfony/dependency-injection": "^5.0",
+		"symfony/http-kernel": "^5.0",
+		"symfony/yaml": "^5.0"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^9.4",
+		"roave/security-advisories": "dev-master"
+	},
+	"autoload": {
+		"psr-4": { "Kirra\\Bundle\\GitLabWebhookBundle\\": "src/" }
+	},
+	"autoload-dev": {
+		"psr-4": { "Kirra\\Bundle\\GitLabWebhookBundle\\Tests\\": "tests/" }
+	},
+	"config": {
+		"preferred-install": {
+			"*": "dist"
+		},
+		"sort-packages": true
+	}
+}
