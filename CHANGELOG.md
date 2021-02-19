@@ -22,4 +22,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `wiki page`
 
 [Unreleased]: https://github.com/iwink/gitlab-webhook-bundle/compare/v1.0.0...main
-[1.0.0]: https://github.com/iwink/gitlab-webhook-bundle/tree/main/v1.0.0
+[1.0.0]: https://github.com/iwink/gitlab-webhook-bundle/releases/tag/v1.0.0
