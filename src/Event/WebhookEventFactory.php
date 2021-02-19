@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Factory to create webhook events.
- * @since $ver$
+ * @since 1.0.0
  */
 class WebhookEventFactory {
 	/**

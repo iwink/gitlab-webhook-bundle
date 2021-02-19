@@ -9,12 +9,12 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 /**
  * Dependency injection for this bundle.
- * @since $ver$
+ * @since 1.0.0
  */
 final class KirraGitLabWebhookExtension extends Extension {
 	/**
 	 * @inheritDoc
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @codeCoverageIgnore
 	 */
 	public function load(array $configs, ContainerBuilder $container): void {

@@ -23,19 +23,19 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 /**
  * Unit tests for {@see GitLabWebhookSubscriber}.
- * @since $ver$
+ * @since 1.0.0
  */
 class GitLabWebhookSubscriberTest extends TestCase {
 	/**
 	 * The event subscriber.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @var GitLabWebhookSubscriber
 	 */
 	private GitLabWebhookSubscriber $subscriber;
 
 	/**
 	 * @inheritDoc
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	protected function setUp(): void {
 		parent::setUp();
@@ -45,7 +45,7 @@ class GitLabWebhookSubscriberTest extends TestCase {
 
 	/**
 	 * Creates a {@see ControllerEvent} to pass to the event subscriber.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @param string $controller The request _controller attribute.
 	 * @param Request $request The request.
 	 * @return ControllerEvent The event.
@@ -63,7 +63,7 @@ class GitLabWebhookSubscriberTest extends TestCase {
 
 	/**
 	 * Creates a {@see ControllerArgumentsEvent} to pass to the event subscriber.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @return ControllerArgumentsEvent The event.
 	 */
 	private function createControllerArgumentsEvent(): ControllerArgumentsEvent {
@@ -82,7 +82,7 @@ class GitLabWebhookSubscriberTest extends TestCase {
 
 	/**
 	 * Creates a {@see ExceptionEvent} to pass to the event subscriber.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @param \Throwable $e The exception.
 	 * @return ExceptionEvent The event.
 	 */
@@ -101,7 +101,7 @@ class GitLabWebhookSubscriberTest extends TestCase {
 
 	/**
 	 * Test case for {@see GitLabWebhookSubscriber::onController()} with an unsupported controller.
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	public function testOnControllerNotSupported(): void {
 		$reader = $this->createMock(ReaderInterface::class);

@@ -4,21 +4,21 @@ namespace Iwink\GitLabWebhookBundle\Annotation;
 
 /**
  * Annotation that can be used to inject a GitLab event into a controller.
- * @since $ver$
+ * @since 1.0.0
  * @Annotation
  * @Target({"METHOD"})
  */
 final class Webhook {
 	/**
 	 * The event.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @var string
 	 */
 	private string $event;
 
 	/**
 	 * Creates a new annotation.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @param mixed[] $data The data.
 	 */
 	public function __construct(array $data) {
@@ -32,7 +32,7 @@ final class Webhook {
 
 	/**
 	 * Returns the event.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @return string The event.
 	 */
 	public function getEvent(): string {

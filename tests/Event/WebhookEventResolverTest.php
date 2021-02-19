@@ -9,12 +9,12 @@ use Iwink\GitLabWebhookBundle\Tests\TestCase;
 
 /**
  * Unit tests for {@see WebhookEventResolver}.
- * @since $ver$
+ * @since 1.0.0
  */
 class WebhookEventResolverTest extends TestCase {
 	/**
 	 * Test case for {@see WebhookEventResolver::resolveClassByHeader()}.
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	public function testResolveClassByHeader(): void {
 		self::assertSame(JobEvent::class, WebhookEventResolver::resolveClassByHeader('Job Hook'));
@@ -23,7 +23,7 @@ class WebhookEventResolverTest extends TestCase {
 
 	/**
 	 * Test case for {@see WebhookEventResolver::testResolveClassByType()}.
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	public function testResolveClassByType(): void {
 		self::assertSame(MergeRequestEvent::class, WebhookEventResolver::resolveClassByType('merge request'));
@@ -32,7 +32,7 @@ class WebhookEventResolverTest extends TestCase {
 
 	/**
 	 * Test case for {@see WebhookEventResolver::resolveTypeByClass()}.
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	public function testResolveTypeByClass(): void {
 		self::assertSame('merge request', WebhookEventResolver::resolveTypeByClass(MergeRequestEvent::class));

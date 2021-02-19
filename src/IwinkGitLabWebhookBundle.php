@@ -6,7 +6,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
  * GitLab webhook bundle.
- * @since $ver$
+ * @since 1.0.0
  */
 final class IwinkGitLabWebhookBundle extends Bundle {
 }

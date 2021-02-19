@@ -10,7 +10,7 @@ use Iwink\GitLabWebhookBundle\Event\Behavior\UserBehaviorTrait;
 /**
  * A GitLab merge request event
  * {@link https://docs.gitlab.com/ce/user/project/integrations/webhooks.html#merge-request-events}.
- * @since $ver$
+ * @since 1.0.0
  */
 class MergeRequestEvent extends WebhookEvent {
 	use ObjectAttributesBehaviorTrait;
@@ -20,13 +20,13 @@ class MergeRequestEvent extends WebhookEvent {
 
 	/**
 	 * @inheritDoc
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	protected const EVENT_HEADER = 'Merge Request Hook';
 
 	/**
 	 * @inheritDoc
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	protected const OBJECT_KIND = 'merge_request';
 }

@@ -4,12 +4,12 @@ namespace Iwink\GitLabWebhookBundle\Event;
 
 /**
  * Resolves webhook events.
- * @since $ver$
+ * @since 1.0.0
  */
 final class WebhookEventResolver {
 	/**
 	 * Webhook event classes.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @var string[]
 	 */
 	private const EVENTS = [
@@ -28,7 +28,7 @@ final class WebhookEventResolver {
 
 	/**
 	 * Resolves a webhook event class by a header.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @param string $header The header.
 	 * @return string|null The event class.
 	 */

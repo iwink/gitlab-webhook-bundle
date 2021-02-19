@@ -11,12 +11,12 @@ use Iwink\GitLabWebhookBundle\Tests\TestCase;
 
 /**
  * Unit tests for behavior traits.
- * @since $ver$
+ * @since 1.0.0
  */
 class BehaviorTraitTest extends TestCase {
 	/**
 	 * Test case for behavior traits.
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	public function testObjectAttributesTrait(): void {
 		$data = ['commit', 'object_attributes', 'project', 'repository', 'user'];
@@ -32,7 +32,7 @@ class BehaviorTraitTest extends TestCase {
 
 /**
  * Implements behaviors for testing purposes.
- * @since $ver$
+ * @since 1.0.0
  */
 class ImplementsBehavior {
 	use CommitBehaviorTrait;

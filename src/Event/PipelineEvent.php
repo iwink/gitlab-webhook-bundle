@@ -9,7 +9,7 @@ use Iwink\GitLabWebhookBundle\Event\Behavior\UserBehaviorTrait;
 
 /**
  * A GitLab pipeline event {@link https://docs.gitlab.com/ce/user/project/integrations/webhooks.html#pipeline-events}.
- * @since $ver$
+ * @since 1.0.0
  */
 class PipelineEvent extends WebhookEvent {
 	use CommitBehaviorTrait;
@@ -19,13 +19,13 @@ class PipelineEvent extends WebhookEvent {
 
 	/**
 	 * @inheritDoc
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	protected const EVENT_HEADER = 'Pipeline Hook';
 
 	/**
 	 * @inheritDoc
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	protected const OBJECT_KIND = 'pipeline';
 }

@@ -7,12 +7,12 @@ use Iwink\GitLabWebhookBundle\Tests\TestCase;
 
 /**
  * Unit tests for {@see WebhookEvent}.
- * @since $ver$
+ * @since 1.0.0
  */
 class WebhookEventTest extends TestCase {
 	/**
 	 * Test case for {@see WebhookEvent::count()}.
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	public function testCount(): void {
 		self::assertSame(0, (new ConcreteWebhookEvent([]))->count());
@@ -20,7 +20,7 @@ class WebhookEventTest extends TestCase {
 
 	/**
 	 * Test case for {@see WebhookEvent::getData()}.
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	public function testGetData(): void {
 		self::assertSame(['key' => 'value'], (new ConcreteWebhookEvent(['key' => 'value']))->getData());
@@ -28,7 +28,7 @@ class WebhookEventTest extends TestCase {
 
 	/**
 	 * Test case for {@see WebhookEvent::getIterator()}.
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	public function testGetIterator(): void {
 		$data = ['key' => 'value'];
@@ -38,7 +38,7 @@ class WebhookEventTest extends TestCase {
 	/**
 	 * Test case for {@see WebhookEvent::offsetExists()}, {@see WebhookEvent::offsetGet()},
 	 * {@see WebhookEvent::offsetSet()} & {@see WebhookEvent::offsetUnset()}.
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	public function testArrayAccess(): void {
 		$event = new ConcreteWebhookEvent([]);
@@ -58,7 +58,7 @@ class WebhookEventTest extends TestCase {
 
 	/**
 	 * Test case for {@see WebhookEvent::getEventHeader()}.
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	public function testGetEventHeader(): void {
 		self::assertSame('Concrete Header', ConcreteWebhookEvent::getEventHeader());

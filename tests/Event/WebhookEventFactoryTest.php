@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Unit tests for {@see WebhookEventFactory}.
- * @since $ver$
+ * @since 1.0.0
  */
 class WebhookEventFactoryTest extends TestCase {
 	/**

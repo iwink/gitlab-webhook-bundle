@@ -9,7 +9,7 @@ use Iwink\GitLabWebhookBundle\Event\Behavior\UserBehaviorTrait;
 /**
  * A GitLab feature flag event
  * {@link https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#feature-flag-events}.
- * @since $ver$
+ * @since 1.0.0
  */
 class FeatureFlagEvent extends WebhookEvent {
 	use ObjectAttributesBehaviorTrait;
@@ -18,13 +18,13 @@ class FeatureFlagEvent extends WebhookEvent {
 
 	/**
 	 * @inheritDoc
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	protected const EVENT_HEADER = 'Feature Flag Hook';
 
 	/**
 	 * @inheritDoc
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	protected const OBJECT_KIND = 'feature_flag';
 }

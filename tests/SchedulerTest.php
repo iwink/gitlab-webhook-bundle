@@ -8,26 +8,26 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
  * Unit tests for {@see Scheduler}.
- * @since $ver$
+ * @since 1.0.0
  */
 class SchedulerTest extends TestCase {
 	/**
 	 * Mock of {@see EventDispatcherInterface}.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @var MockObject|EventDispatcherInterface
 	 */
 	private EventDispatcherInterface $event_dispatcher;
 
 	/**
 	 * The scheduler.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @var Scheduler
 	 */
 	private Scheduler $scheduler;
 
 	/**
 	 * @inheritDoc
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	protected function setUp(): void {
 		parent::setUp();
@@ -38,7 +38,7 @@ class SchedulerTest extends TestCase {
 
 	/**
 	 * Test case for {@see Scheduler::schedule()}.
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	public function testSchedule(): void {
 		$callable = static fn(bool $value): bool => $value;

@@ -12,19 +12,19 @@ use Symfony\Component\HttpKernel\KernelEvents;
  * Because GitLab expects a quick response from a webhook and some tasks take a while to execute, you can use this
  * scheduler to execute a task after a response has been sent.
  *
- * @since $ver$
+ * @since 1.0.0
  */
 class Scheduler {
 	/**
 	 * Symfony's event dispatcher
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @var EventDispatcherInterface
 	 */
 	private EventDispatcherInterface $event_dispatcher;
 
 	/**
 	 * Creates a new scheduler.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @param EventDispatcherInterface $event_dispatcher Symfony's event dispatcher.
 	 */
 	public function __construct(EventDispatcherInterface $event_dispatcher) {
@@ -33,7 +33,7 @@ class Scheduler {
 
 	/**
 	 * Schedules a callable to be executed on {@see TerminateEvent}.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @param callable $callable The callable.
 	 * @param mixed[] $arguments Arguments to pass to the callable.
 	 */

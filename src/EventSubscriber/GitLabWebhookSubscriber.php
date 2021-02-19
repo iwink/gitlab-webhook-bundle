@@ -21,26 +21,26 @@ use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 
 /**
  * Event subscriber to inject {@see WebhookEvent} instances on controller actions.
- * @since $ver$
+ * @since 1.0.0
  */
 class GitLabWebhookSubscriber implements EventSubscriberInterface {
 	/**
 	 * Application environment.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @var string
 	 */
 	private string $environment;
 
 	/**
 	 * Annotation reader.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @var ReaderInterface
 	 */
 	private ReaderInterface $reader;
 
 	/**
 	 * Creates a new event subscriber.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @param string $environment Application environment.
 	 * @param ReaderInterface $reader Annotation reader.
 	 */

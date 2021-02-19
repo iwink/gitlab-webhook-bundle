@@ -10,7 +10,7 @@ use Iwink\GitLabWebhookBundle\Event\Behavior\UserBehaviorTrait;
 
 /**
  * A GitLab comment event {@link https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#comment-events}.
- * @since $ver$
+ * @since 1.0.0
  */
 class CommentEvent extends WebhookEvent {
 	use CommitBehaviorTrait;
@@ -21,13 +21,13 @@ class CommentEvent extends WebhookEvent {
 
 	/**
 	 * @inheritDoc
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	protected const EVENT_HEADER = 'Note Hook';
 
 	/**
 	 * @inheritDoc
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	protected const OBJECT_KIND = 'note';
 }

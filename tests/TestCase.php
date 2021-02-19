@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase as BaseTestCase;
 
 /**
  * Base test case for this bundle.
- * @since $ver$
+ * @since 1.0.0
  */
 abstract class TestCase extends BaseTestCase {
 }

@@ -7,7 +7,7 @@ use Iwink\GitLabWebhookBundle\Event\Behavior\RepositoryBehaviorTrait;
 
 /**
  * A GitLab tag event {@link https://docs.gitlab.com/ce/user/project/integrations/webhooks.html#tag-events}.
- * @since $ver$
+ * @since 1.0.0
  */
 class TagEvent extends WebhookEvent {
 	use ProjectBehaviorTrait;
@@ -15,13 +15,13 @@ class TagEvent extends WebhookEvent {
 
 	/**
 	 * @inheritDoc
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	protected const EVENT_HEADER = 'Tag Push Hook';
 
 	/**
 	 * @inheritDoc
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	protected const OBJECT_KIND = 'tag_push';
 }

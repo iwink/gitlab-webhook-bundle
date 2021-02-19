@@ -9,7 +9,7 @@ use Iwink\GitLabWebhookBundle\Event\Behavior\UserBehaviorTrait;
 
 /**
  * A GitLab issue event {@link https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#issue-events}.
- * @since $ver$
+ * @since 1.0.0
  */
 class IssueEvent extends WebhookEvent {
 	use ObjectAttributesBehaviorTrait;
@@ -19,13 +19,13 @@ class IssueEvent extends WebhookEvent {
 
 	/**
 	 * @inheritDoc
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	protected const EVENT_HEADER = 'Issue Hook';
 
 	/**
 	 * @inheritDoc
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	protected const OBJECT_KIND = 'issue';
 }
