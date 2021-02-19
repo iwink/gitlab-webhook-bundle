@@ -7,7 +7,7 @@
 		"GitLab",
 		"webhook"
 	],
-	"license": "proprietary",
+	"license": "MIT",
 	"require": {
 		"php": ">=7.4",
 		"ext-json": "*",
