@@ -16,7 +16,7 @@ class SchedulerTest extends TestCase {
 	 * @since 1.0.0
 	 * @var MockObject|EventDispatcherInterface
 	 */
-	private EventDispatcherInterface $event_dispatcher;
+	private EventDispatcherInterface $eventDispatcher;
 
 	/**
 	 * The scheduler.
@@ -32,8 +32,8 @@ class SchedulerTest extends TestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
-		$this->event_dispatcher = $this->createMock(EventDispatcherInterface::class);
-		$this->scheduler = new Scheduler($this->event_dispatcher);
+		$this->eventDispatcher = $this->createMock(EventDispatcherInterface::class);
+		$this->scheduler = new Scheduler($this->eventDispatcher);
 	}
 
 	/**
@@ -42,9 +42,9 @@ class SchedulerTest extends TestCase {
 	 */
 	public function testSchedule(): void {
 		$callable = static fn(bool $value): bool => $value;
-		$expected = static fn() => \call_user_func_array($callable, [true]);
+		$expected = static fn() => $callable(true);
 
-		$this->event_dispatcher
+		$this->eventDispatcher
 			->expects(self::once())
 			->method('addListener')
 			->with(
