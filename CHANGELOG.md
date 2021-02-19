@@ -21,5 +21,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `release`
   - `wiki page`
 
-[Unreleased]: https://gitlab.services.kirra.nl/kirra/gitlab-webhook-bundle/compare/v1.0.0...main
+[Unreleased]: https://github.com/iwink/gitlab-webhook-bundle/compare/v1.0.0...main
 [1.0.0]: https://github.com/iwink/gitlab-webhook-bundle/tree/main/v1.0.0

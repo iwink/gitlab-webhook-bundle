@@ -11,7 +11,7 @@ services:
     # Register service automatically.
     Iwink\GitLabWebhookBundle\:
         resource: '../../*'
-        exclude: '../../{DependencyInjection,KirraGitLabWebhookBundle.php}'
+        exclude: '../../{DependencyInjection,IwinkGitLabWebhookBundle.php}'
 
     Iwink\GitLabWebhookBundle\EventSubscriber\GitLabWebhookSubscriber:
         arguments:

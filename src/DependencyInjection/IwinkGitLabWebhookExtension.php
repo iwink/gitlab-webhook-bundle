@@ -11,7 +11,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  * Dependency injection for this bundle.
  * @since 1.0.0
  */
-final class KirraGitLabWebhookExtension extends Extension {
+final class IwinkGitLabWebhookExtension extends Extension {
 	/**
 	 * @inheritDoc
 	 * @since 1.0.0
