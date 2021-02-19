@@ -1,6 +1,6 @@
 <?php
 
-namespace Kirra\Bundle\GitLabWebhookBundle\Event\Behavior;
+namespace Iwink\GitLabWebhookBundle\Event\Behavior;
 
 /**
  * Trait that can be used for events that have a `project` section.

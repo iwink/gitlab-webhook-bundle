@@ -1,6 +1,6 @@
 <?php
 
-namespace Kirra\Bundle\GitLabWebhookBundle\Tests;
+namespace Iwink\GitLabWebhookBundle\Tests;
 
 use PHPUnit\Framework\TestCase as BaseTestCase;
 

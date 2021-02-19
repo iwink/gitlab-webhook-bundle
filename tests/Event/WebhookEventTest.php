@@ -1,9 +1,9 @@
 <?php
 
-namespace Kirra\Bundle\GitLabWebhookBundle\Tests\Event;
+namespace Iwink\GitLabWebhookBundle\Tests\Event;
 
-use Kirra\Bundle\GitLabWebhookBundle\Event\WebhookEvent;
-use Kirra\Bundle\GitLabWebhookBundle\Tests\TestCase;
+use Iwink\GitLabWebhookBundle\Event\WebhookEvent;
+use Iwink\GitLabWebhookBundle\Tests\TestCase;
 
 /**
  * Unit tests for {@see WebhookEvent}.

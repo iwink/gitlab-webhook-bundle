@@ -1,14 +1,14 @@
 <?php
 
-namespace Kirra\Bundle\GitLabWebhookBundle\Tests\EventSubscriber;
+namespace Iwink\GitLabWebhookBundle\Tests\EventSubscriber;
 
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Annotations\Reader as ReaderInterface;
-use Kirra\Bundle\GitLabWebhookBundle\Event\Exception\InvalidWebhookRequestException;
-use Kirra\Bundle\GitLabWebhookBundle\Event\PipelineEvent;
-use Kirra\Bundle\GitLabWebhookBundle\EventSubscriber\GitLabWebhookSubscriber;
-use Kirra\Bundle\GitLabWebhookBundle\Tests\Fixtures\WebhookController;
-use Kirra\Bundle\GitLabWebhookBundle\Tests\TestCase;
+use Iwink\GitLabWebhookBundle\Event\Exception\InvalidWebhookRequestException;
+use Iwink\GitLabWebhookBundle\Event\PipelineEvent;
+use Iwink\GitLabWebhookBundle\EventSubscriber\GitLabWebhookSubscriber;
+use Iwink\GitLabWebhookBundle\Tests\Fixtures\WebhookController;
+use Iwink\GitLabWebhookBundle\Tests\TestCase;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Kirra\Bundle\GitLabWebhookBundle\Event\Exception;
+namespace Iwink\GitLabWebhookBundle\Event\Exception;
 
 use Symfony\Component\HttpFoundation\Request;
 

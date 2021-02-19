@@ -1,12 +1,12 @@
 <?php
 
-namespace Kirra\Bundle\GitLabWebhookBundle\Event;
+namespace Iwink\GitLabWebhookBundle\Event;
 
-use Kirra\Bundle\GitLabWebhookBundle\Event\Behavior\CommitBehaviorTrait;
-use Kirra\Bundle\GitLabWebhookBundle\Event\Behavior\ObjectAttributesBehaviorTrait;
-use Kirra\Bundle\GitLabWebhookBundle\Event\Behavior\ProjectBehaviorTrait;
-use Kirra\Bundle\GitLabWebhookBundle\Event\Behavior\RepositoryBehaviorTrait;
-use Kirra\Bundle\GitLabWebhookBundle\Event\Behavior\UserBehaviorTrait;
+use Iwink\GitLabWebhookBundle\Event\Behavior\CommitBehaviorTrait;
+use Iwink\GitLabWebhookBundle\Event\Behavior\ObjectAttributesBehaviorTrait;
+use Iwink\GitLabWebhookBundle\Event\Behavior\ProjectBehaviorTrait;
+use Iwink\GitLabWebhookBundle\Event\Behavior\RepositoryBehaviorTrait;
+use Iwink\GitLabWebhookBundle\Event\Behavior\UserBehaviorTrait;
 
 /**
  * A GitLab comment event {@link https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#comment-events}.

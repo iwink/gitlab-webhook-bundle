@@ -1,8 +1,8 @@
 <?php
 
-namespace Kirra\Bundle\GitLabWebhookBundle\Event;
+namespace Iwink\GitLabWebhookBundle\Event;
 
-use Kirra\Bundle\GitLabWebhookBundle\Event\Exception\InvalidWebhookRequestException;
+use Iwink\GitLabWebhookBundle\Event\Exception\InvalidWebhookRequestException;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

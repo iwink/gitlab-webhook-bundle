@@ -1,9 +1,9 @@
 <?php
 
-namespace Kirra\Bundle\GitLabWebhookBundle\Event;
+namespace Iwink\GitLabWebhookBundle\Event;
 
-use Kirra\Bundle\GitLabWebhookBundle\Event\Behavior\RepositoryBehaviorTrait;
-use Kirra\Bundle\GitLabWebhookBundle\Event\Behavior\UserBehaviorTrait;
+use Iwink\GitLabWebhookBundle\Event\Behavior\RepositoryBehaviorTrait;
+use Iwink\GitLabWebhookBundle\Event\Behavior\UserBehaviorTrait;
 
 /**
  * A GitLab job event {@link https://docs.gitlab.com/ce/user/project/integrations/webhooks.html#job-events}.

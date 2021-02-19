@@ -1,13 +1,13 @@
 <?php
 
-namespace Kirra\Bundle\GitLabWebhookBundle\EventSubscriber;
+namespace Iwink\GitLabWebhookBundle\EventSubscriber;
 
 use Doctrine\Common\Annotations\Reader as ReaderInterface;
-use Kirra\Bundle\GitLabWebhookBundle\Annotation\Webhook;
-use Kirra\Bundle\GitLabWebhookBundle\Event\Exception\InvalidWebhookRequestException;
-use Kirra\Bundle\GitLabWebhookBundle\Event\WebhookEvent;
-use Kirra\Bundle\GitLabWebhookBundle\Event\WebhookEventFactory;
-use Kirra\Bundle\GitLabWebhookBundle\Event\WebhookEventResolver;
+use Iwink\GitLabWebhookBundle\Annotation\Webhook;
+use Iwink\GitLabWebhookBundle\Event\Exception\InvalidWebhookRequestException;
+use Iwink\GitLabWebhookBundle\Event\WebhookEvent;
+use Iwink\GitLabWebhookBundle\Event\WebhookEventFactory;
+use Iwink\GitLabWebhookBundle\Event\WebhookEventResolver;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;

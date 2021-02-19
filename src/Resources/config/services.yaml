@@ -9,10 +9,10 @@ services:
         public: false
 
     # Register service automatically.
-    Kirra\Bundle\GitLabWebhookBundle\:
+    Iwink\GitLabWebhookBundle\:
         resource: '../../*'
         exclude: '../../{DependencyInjection,KirraGitLabWebhookBundle.php}'
 
-    Kirra\Bundle\GitLabWebhookBundle\EventSubscriber\GitLabWebhookSubscriber:
+    Iwink\GitLabWebhookBundle\EventSubscriber\GitLabWebhookSubscriber:
         arguments:
             $environment: '%kernel.environment%'

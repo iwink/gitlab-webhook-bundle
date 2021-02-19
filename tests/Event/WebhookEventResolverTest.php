@@ -1,11 +1,11 @@
 <?php
 
-namespace Kirra\Bundle\GitLabWebhookBundle\Tests\Event;
+namespace Iwink\GitLabWebhookBundle\Tests\Event;
 
-use Kirra\Bundle\GitLabWebhookBundle\Event\JobEvent;
-use Kirra\Bundle\GitLabWebhookBundle\Event\MergeRequestEvent;
-use Kirra\Bundle\GitLabWebhookBundle\Event\WebhookEventResolver;
-use Kirra\Bundle\GitLabWebhookBundle\Tests\TestCase;
+use Iwink\GitLabWebhookBundle\Event\JobEvent;
+use Iwink\GitLabWebhookBundle\Event\MergeRequestEvent;
+use Iwink\GitLabWebhookBundle\Event\WebhookEventResolver;
+use Iwink\GitLabWebhookBundle\Tests\TestCase;
 
 /**
  * Unit tests for {@see WebhookEventResolver}.

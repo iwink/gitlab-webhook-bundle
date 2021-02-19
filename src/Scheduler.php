@@ -1,6 +1,6 @@
 <?php
 
-namespace Kirra\Bundle\GitLabWebhookBundle;
+namespace Iwink\GitLabWebhookBundle;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpKernel\Event\TerminateEvent;

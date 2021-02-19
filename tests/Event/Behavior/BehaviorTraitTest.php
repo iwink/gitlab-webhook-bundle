@@ -1,13 +1,13 @@
 <?php
 
-namespace Kirra\Bundle\GitLabWebhookBundle\Tests\Event\Behavior;
+namespace Iwink\GitLabWebhookBundle\Tests\Event\Behavior;
 
-use Kirra\Bundle\GitLabWebhookBundle\Event\Behavior\CommitBehaviorTrait;
-use Kirra\Bundle\GitLabWebhookBundle\Event\Behavior\ObjectAttributesBehaviorTrait;
-use Kirra\Bundle\GitLabWebhookBundle\Event\Behavior\ProjectBehaviorTrait;
-use Kirra\Bundle\GitLabWebhookBundle\Event\Behavior\RepositoryBehaviorTrait;
-use Kirra\Bundle\GitLabWebhookBundle\Event\Behavior\UserBehaviorTrait;
-use Kirra\Bundle\GitLabWebhookBundle\Tests\TestCase;
+use Iwink\GitLabWebhookBundle\Event\Behavior\CommitBehaviorTrait;
+use Iwink\GitLabWebhookBundle\Event\Behavior\ObjectAttributesBehaviorTrait;
+use Iwink\GitLabWebhookBundle\Event\Behavior\ProjectBehaviorTrait;
+use Iwink\GitLabWebhookBundle\Event\Behavior\RepositoryBehaviorTrait;
+use Iwink\GitLabWebhookBundle\Event\Behavior\UserBehaviorTrait;
+use Iwink\GitLabWebhookBundle\Tests\TestCase;
 
 /**
  * Unit tests for behavior traits.

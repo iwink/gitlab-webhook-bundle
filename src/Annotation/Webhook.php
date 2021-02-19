@@ -1,6 +1,6 @@
 <?php
 
-namespace Kirra\Bundle\GitLabWebhookBundle\Annotation;
+namespace Iwink\GitLabWebhookBundle\Annotation;
 
 /**
  * Annotation that can be used to inject a GitLab event into a controller.

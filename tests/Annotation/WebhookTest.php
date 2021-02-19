@@ -1,9 +1,9 @@
 <?php
 
-namespace Kirra\Bundle\GitLabWebhookBundle\Tests\Annotation;
+namespace Iwink\GitLabWebhookBundle\Tests\Annotation;
 
-use Kirra\Bundle\GitLabWebhookBundle\Annotation\Webhook;
-use Kirra\Bundle\GitLabWebhookBundle\Tests\TestCase;
+use Iwink\GitLabWebhookBundle\Annotation\Webhook;
+use Iwink\GitLabWebhookBundle\Tests\TestCase;
 
 /**
  * Unit tests for {@see Webhook}.

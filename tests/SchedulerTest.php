@@ -1,8 +1,8 @@
 <?php
 
-namespace Kirra\Bundle\GitLabWebhookBundle\Tests;
+namespace Iwink\GitLabWebhookBundle\Tests;
 
-use Kirra\Bundle\GitLabWebhookBundle\Scheduler;
+use Iwink\GitLabWebhookBundle\Scheduler;
 use PHPUnit\Framework\MockObject\MockObject;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 

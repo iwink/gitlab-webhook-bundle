@@ -1,6 +1,6 @@
 <?php
 
-namespace Kirra\Bundle\GitLabWebhookBundle\Event;
+namespace Iwink\GitLabWebhookBundle\Event;
 
 /**
  * Base GitLab Webhook event.

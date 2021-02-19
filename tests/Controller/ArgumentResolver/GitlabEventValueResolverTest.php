@@ -1,11 +1,11 @@
 <?php
 
-namespace Kirra\Bundle\GitLabWebhookBundle\Tests\Controller\ArgumentResolver;
+namespace Iwink\GitLabWebhookBundle\Tests\Controller\ArgumentResolver;
 
-use Kirra\Bundle\GitLabWebhookBundle\Controller\ArgumentResolver\GitLabEventValueResolver;
-use Kirra\Bundle\GitLabWebhookBundle\Event\JobEvent;
-use Kirra\Bundle\GitLabWebhookBundle\Event\WebhookEvent;
-use Kirra\Bundle\GitLabWebhookBundle\Tests\TestCase;
+use Iwink\GitLabWebhookBundle\Controller\ArgumentResolver\GitLabEventValueResolver;
+use Iwink\GitLabWebhookBundle\Event\JobEvent;
+use Iwink\GitLabWebhookBundle\Event\WebhookEvent;
+use Iwink\GitLabWebhookBundle\Tests\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadata;
 

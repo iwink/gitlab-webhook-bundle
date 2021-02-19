@@ -1,9 +1,9 @@
 <?php
 
-namespace Kirra\Bundle\GitLabWebhookBundle\Event;
+namespace Iwink\GitLabWebhookBundle\Event;
 
-use Kirra\Bundle\GitLabWebhookBundle\Event\Behavior\CommitBehaviorTrait;
-use Kirra\Bundle\GitLabWebhookBundle\Event\Behavior\ProjectBehaviorTrait;
+use Iwink\GitLabWebhookBundle\Event\Behavior\CommitBehaviorTrait;
+use Iwink\GitLabWebhookBundle\Event\Behavior\ProjectBehaviorTrait;
 
 /**
  * A GitLab release event {@link https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#release-events}.

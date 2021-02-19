@@ -1,5 +1,5 @@
 {
-	"name": "kirra/gitlab-webhook-bundle",
+	"name": "iwink/gitlab-webhook-bundle",
 	"type": "symfony-bundle",
 	"description": "GitLab Webhook Symfony bundle.",
 	"keywords": [
@@ -22,10 +22,10 @@
 		"roave/security-advisories": "dev-master"
 	},
 	"autoload": {
-		"psr-4": { "Kirra\\Bundle\\GitLabWebhookBundle\\": "src/" }
+		"psr-4": { "Iwink\\GitLabWebhookBundle\\": "src/" }
 	},
 	"autoload-dev": {
-		"psr-4": { "Kirra\\Bundle\\GitLabWebhookBundle\\Tests\\": "tests/" }
+		"psr-4": { "Iwink\\GitLabWebhookBundle\\Tests\\": "tests/" }
 	},
 	"config": {
 		"preferred-install": {

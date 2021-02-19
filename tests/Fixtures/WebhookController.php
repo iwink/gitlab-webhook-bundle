@@ -1,8 +1,8 @@
 <?php
 
-namespace Kirra\Bundle\GitLabWebhookBundle\Tests\Fixtures;
+namespace Iwink\GitLabWebhookBundle\Tests\Fixtures;
 
-use Kirra\Bundle\GitLabWebhookBundle\Annotation\Webhook;
+use Iwink\GitLabWebhookBundle\Annotation\Webhook;
 
 /**
  * Testable controller.

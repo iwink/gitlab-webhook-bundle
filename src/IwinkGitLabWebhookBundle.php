@@ -1,6 +1,6 @@
 <?php
 
-namespace Kirra\Bundle\GitLabWebhookBundle;
+namespace Iwink\GitLabWebhookBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
@@ -8,5 +8,5 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  * GitLab webhook bundle.
  * @since $ver$
  */
-final class KirraGitLabWebhookBundle extends Bundle {
+final class IwinkGitLabWebhookBundle extends Bundle {
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace Kirra\Bundle\GitLabWebhookBundle\Controller\ArgumentResolver;
+namespace Iwink\GitLabWebhookBundle\Controller\ArgumentResolver;
 
-use Kirra\Bundle\GitLabWebhookBundle\Event\WebhookEvent;
+use Iwink\GitLabWebhookBundle\Event\WebhookEvent;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Controller\ArgumentValueResolverInterface;
 use Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadata;
