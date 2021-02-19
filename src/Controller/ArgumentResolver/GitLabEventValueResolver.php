@@ -17,9 +17,9 @@ final class GitLabEventValueResolver implements ArgumentValueResolverInterface {
 	 * @since 1.0.0
 	 */
 	public function supports(Request $request, ArgumentMetadata $argument): bool {
-		$has_event = $request->attributes->getBoolean('_has_gitlab_event', false);
+		$hasEvent = $request->attributes->getBoolean('_has_gitlab_event', false);
 
-		return $has_event && is_a($argument->getType(), WebhookEvent::class, true);
+		return $hasEvent && is_a($argument->getType(), WebhookEvent::class, true);
 	}
 
 	/**

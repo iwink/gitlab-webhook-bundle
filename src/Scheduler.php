@@ -20,7 +20,7 @@ class Scheduler {
 	 * @since 1.0.0
 	 * @var EventDispatcherInterface
 	 */
-	private EventDispatcherInterface $event_dispatcher;
+	private EventDispatcherInterface $eventDispatcher;
 
 	/**
 	 * Creates a new scheduler.
@@ -28,7 +28,7 @@ class Scheduler {
 	 * @param EventDispatcherInterface $event_dispatcher Symfony's event dispatcher.
 	 */
 	public function __construct(EventDispatcherInterface $event_dispatcher) {
-		$this->event_dispatcher = $event_dispatcher;
+		$this->eventDispatcher = $event_dispatcher;
 	}
 
 	/**
@@ -38,7 +38,7 @@ class Scheduler {
 	 * @param mixed[] $arguments Arguments to pass to the callable.
 	 */
 	public function schedule(callable $callable, array $arguments = []): void {
-		$this->event_dispatcher->addListener(
+		$this->eventDispatcher->addListener(
 			KernelEvents::TERMINATE,
 			static fn() => \call_user_func_array($callable, $arguments)
 		);

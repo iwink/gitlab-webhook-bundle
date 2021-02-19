@@ -80,8 +80,8 @@ class GitLabWebhookSubscriber implements EventSubscriberInterface {
 			);
 
 			// Resolve event types
-			$webhook_event_types = array_map(static fn(Webhook $webhook): string => $webhook->getEvent(), $annotations);
-			$attributes->set('_has_gitlab_event', !empty($webhook_event_types));
+			$webhookEventTypes = array_map(static fn(Webhook $webhook): string => $webhook->getEvent(), $annotations);
+			$attributes->set('_has_gitlab_event', !empty($webhookEventTypes));
 			if (!$attributes->getBoolean('_has_gitlab_event', false)) {
 				return;
 			}
@@ -93,17 +93,17 @@ class GitLabWebhookSubscriber implements EventSubscriberInterface {
 				}
 
 				// Create an event based on the request and check if it's valid
-				$webhook_event = WebhookEventFactory::createFromRequest($request);
-				$webhook_events = array_map([WebhookEventResolver::class, 'resolveClassByType'], $webhook_event_types);
-				if (!\in_array(get_class($webhook_event), $webhook_events, true)) {
+				$webhookEvent = WebhookEventFactory::createFromRequest($request);
+				$webhookEvents = array_map([WebhookEventResolver::class, 'resolveClassByType'], $webhookEventTypes);
+				if (!\in_array(get_class($webhookEvent), $webhookEvents, true)) {
 					throw new BadRequestHttpException(sprintf(
 						'This webhook doesn\'t support the "%s" event.',
-						WebhookEventResolver::resolveTypeByClass(get_class($webhook_event))
+						WebhookEventResolver::resolveTypeByClass(get_class($webhookEvent))
 					));
 				}
 
 				// Store the event on the request attributes
-				$attributes->set('_gitlab_event', $webhook_event);
+				$attributes->set('_gitlab_event', $webhookEvent);
 			} catch (InvalidWebhookRequestException $e) {
 				throw new BadRequestHttpException($e->getMessage(), $e);
 			}
@@ -136,16 +136,16 @@ class GitLabWebhookSubscriber implements EventSubscriberInterface {
 
 		// Build response data
 		$exception = $event->getThrowable();
-		$status_code = $exception instanceof HttpExceptionInterface
+		$statusCode = $exception instanceof HttpExceptionInterface
 			? $exception->getStatusCode()
 			: Response::HTTP_INTERNAL_SERVER_ERROR;
-		$data = ['status' => $status_code, 'message' => $exception->getMessage()];
+		$data = ['status' => $statusCode, 'message' => $exception->getMessage()];
 
 		// If we're running in dev mode, append a trace
 		if ('dev' === $this->environment) {
 			$data = array_merge($data, ['trace' => $exception->getTrace()]);
 		}
 
-		$event->setResponse(new JsonResponse($data, $status_code));
+		$event->setResponse(new JsonResponse($data, $statusCode));
 	}
 }

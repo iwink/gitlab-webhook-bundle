@@ -25,8 +25,8 @@ class WebhookEventFactory {
 		}
 
 		// Resolve event
-		$event_class = WebhookEventResolver::resolveClassByHeader($header);
-		if (null === $event_class) {
+		$eventClass = WebhookEventResolver::resolveClassByHeader($header);
+		if (null === $eventClass) {
 			throw new InvalidWebhookRequestException(sprintf('Unsupported webhook event "%s".', $header));
 		}
 
@@ -38,15 +38,15 @@ class WebhookEventFactory {
 		}
 
 		// Validate data against event
-		$object_kind = $data['object_kind'] ?? null;
-		if ($object_kind !== $event_class::getObjectKind()) {
+		$objectKind = $data['object_kind'] ?? null;
+		if ($objectKind !== $eventClass::getObjectKind()) {
 			throw new InvalidWebhookRequestException(sprintf(
 				'Webhook payload object_kind "%s" is invalid for the "%s" event.',
-				$object_kind,
-				WebhookEventResolver::resolveTypeByClass($event_class),
+				$objectKind,
+				WebhookEventResolver::resolveTypeByClass($eventClass),
 			));
 		}
 
-		return new $event_class($data);
+		return new $eventClass($data);
 	}
 }
