@@ -4,12 +4,12 @@ namespace Iwink\GitLabWebhookBundle\Event\Behavior;
 
 /**
  * Trait that can be used for events that have a `repository` section.
- * @since $ver$
+ * @since 1.0.0
  */
 trait RepositoryBehaviorTrait {
 	/**
 	 * Returns the repository data.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @return mixed[] The data.
 	 */
 	public function getRepository(): array {

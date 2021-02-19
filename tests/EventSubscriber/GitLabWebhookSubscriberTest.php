@@ -118,7 +118,7 @@ class GitLabWebhookSubscriberTest extends TestCase {
 
 	/**
 	 * Test case for {@see GitLabWebhookSubscriber::onController()} without annotations.
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	public function testOnControllerNoAnnotation(): void {
 		$request = $this->createMock(Request::class);
@@ -134,7 +134,7 @@ class GitLabWebhookSubscriberTest extends TestCase {
 
 	/**
 	 * Test case for {@see GitLabWebhookSubscriber::onController()} with an invalid HTTP method.
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	public function testOnControllerInvalidMethod(): void {
 		$this->expectExceptionObject(new MethodNotAllowedHttpException(['POST']));
@@ -147,7 +147,7 @@ class GitLabWebhookSubscriberTest extends TestCase {
 
 	/**
 	 * Test case for {@see GitLabWebhookSubscriber::onController()} with an invalid payload.
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	public function testOnControllerInvalidPayload(): void {
 		$exception = new InvalidWebhookRequestException('Missing webhook header.');
@@ -164,7 +164,7 @@ class GitLabWebhookSubscriberTest extends TestCase {
 
 	/**
 	 * Test case for {@see GitLabWebhookSubscriber::onController()} with an annotation mismatch.
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	public function testOnControllerAnnotationMismatch(): void {
 		$this->expectExceptionObject(new BadRequestHttpException('This webhook doesn\'t support the "job" event.'));
@@ -179,7 +179,7 @@ class GitLabWebhookSubscriberTest extends TestCase {
 
 	/**
 	 * Test case for {@see GitLabWebhookSubscriber::onController()}.
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	public function testOnController(): void {
 		$payload = ['object_kind' => 'pipeline'];
@@ -193,7 +193,7 @@ class GitLabWebhookSubscriberTest extends TestCase {
 
 	/**
 	 * Test case for {@see GitLabWebhookSubscriber::onControllerArguments()}.
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	public function testOnControllerArguments(): void {
 		$event = $this->createControllerArgumentsEvent();
@@ -205,7 +205,7 @@ class GitLabWebhookSubscriberTest extends TestCase {
 
 	/**
 	 * Test case for {@see GitLabWebhookSubscriber::onException()} without a webhook event.
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	public function testOnExceptionNoWebhookEvent(): void {
 		$event = $this->createExceptionEvent(new \Exception());
@@ -218,7 +218,7 @@ class GitLabWebhookSubscriberTest extends TestCase {
 
 	/**
 	 * Data provider for {@see GitLabWebhookSubscriber::onException()}.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @return mixed[] The data set.
 	 */
 	public function onExceptionDataProvider(): array {
@@ -241,7 +241,7 @@ class GitLabWebhookSubscriberTest extends TestCase {
 
 	/**
 	 * Test case for {@see GitLabWebhookSubscriber::onException()} without a webhook event.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @param \Throwable $exception The exception.
 	 * @param Response $expected The response.
 	 * @param string $environment The environment.

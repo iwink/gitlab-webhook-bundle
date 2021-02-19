@@ -43,7 +43,7 @@ final class WebhookEventResolver {
 
 	/**
 	 * Resolves a webhook event class by a type.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @param string $type The type.
 	 * @return string|null The event class.
 	 */
@@ -56,7 +56,7 @@ final class WebhookEventResolver {
 
 	/**
 	 * Resolves a webhook's type by an event class.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @param string $event_class The event class.
 	 * @return string The type.
 	 */

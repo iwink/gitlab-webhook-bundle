@@ -51,7 +51,7 @@ class GitLabWebhookSubscriber implements EventSubscriberInterface {
 
 	/**
 	 * @inheritDoc
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @codeCoverageIgnore
 	 */
 	public static function getSubscribedEvents(): array {
@@ -64,7 +64,7 @@ class GitLabWebhookSubscriber implements EventSubscriberInterface {
 
 	/**
 	 * Tries to resolve a {@see WebhookEvent} from a {@see Request} if the {@see Webhook} annotation is present.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @param ControllerEvent $event The event.
 	 */
 	public function onController(ControllerEvent $event): void {
@@ -114,7 +114,7 @@ class GitLabWebhookSubscriber implements EventSubscriberInterface {
 
 	/**
 	 * Removes the {@see WebhookEvent} from {@see Request::$attributes} if it's a webhook request.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @param ControllerArgumentsEvent $event The event.
 	 */
 	public function onControllerArguments(ControllerArgumentsEvent $event): void {
@@ -126,7 +126,7 @@ class GitLabWebhookSubscriber implements EventSubscriberInterface {
 
 	/**
 	 * Returns a JSON response if it's a webhook request.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @param ExceptionEvent $event The event.
 	 */
 	public function onException(ExceptionEvent $event): void {

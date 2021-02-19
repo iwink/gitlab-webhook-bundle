@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 class WebhookEventFactory {
 	/**
 	 * Creates a webhook event from a HTTP POST request.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @param Request $request The request.
 	 * @return WebhookEvent The event.
 	 * @throws InvalidWebhookRequestException If an event couldn't be created.

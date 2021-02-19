@@ -9,7 +9,7 @@ namespace Iwink\GitLabWebhookBundle\Event\Behavior;
 trait ObjectAttributesBehaviorTrait {
 	/**
 	 * Returns the object attributes data.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @return mixed[] The data.
 	 */
 	public function getObjectAttributes(): array {

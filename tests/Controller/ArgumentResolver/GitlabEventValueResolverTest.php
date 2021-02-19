@@ -11,12 +11,12 @@ use Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadata;
 
 /**
  * Unit tests for {@see GitLabEventValueResolver}.
- * @since $ver$
+ * @since 1.0.0
  */
 class GitlabEventValueResolverTest extends TestCase {
 	/**
 	 * Creates an HTTP request, stores an optional even and returns the request.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @param WebhookEvent|null $event Optional event to store on the attributes.
 	 * @return Request The request.
 	 */
@@ -32,7 +32,7 @@ class GitlabEventValueResolverTest extends TestCase {
 
 	/**
 	 * Creates argument metadata with a type and returns it.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @param string $type The type.
 	 * @return ArgumentMetadata The metadata.
 	 */
@@ -42,7 +42,7 @@ class GitlabEventValueResolverTest extends TestCase {
 
 	/**
 	 * Data provider for {@see GitLabEventValueResolver::supports()}.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @return mixed[] The data set.
 	 */
 	public function supportsDataProvider(): array {
@@ -67,7 +67,7 @@ class GitlabEventValueResolverTest extends TestCase {
 
 	/**
 	 * Test case for {@see GitLabEventValueResolver::supports()}.
-	 * @since $ver$
+	 * @since 1.0.0
 	 * @param Request $request The request.
 	 * @param ArgumentMetadata $argument The argument.
 	 * @param bool $expected The expected result.
@@ -81,7 +81,7 @@ class GitlabEventValueResolverTest extends TestCase {
 
 	/**
 	 * Test case for {@see GitLabEventValueResolver::resolve()}.
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	public function testResolve(): void {
 		$resolver = new GitLabEventValueResolver();

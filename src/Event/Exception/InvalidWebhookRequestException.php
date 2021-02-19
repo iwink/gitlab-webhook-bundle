@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Event that is thrown if a {@see Request} couldn't be parsed to a webhook event.
- * @since $ver$
+ * @since 1.0.0
  */
 class InvalidWebhookRequestException extends \InvalidArgumentException {
 }

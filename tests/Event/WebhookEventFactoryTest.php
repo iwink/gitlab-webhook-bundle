@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 class WebhookEventFactoryTest extends TestCase {
 	/**
 	 * Test case for {@see WebhookEventFactory::createFromRequest()} without a webhook header.
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	public function testCreateFromRequestMissingHeader(): void {
 		$this->expectExceptionObject(new InvalidWebhookRequestException('Missing webhook header.'));
@@ -27,7 +27,7 @@ class WebhookEventFactoryTest extends TestCase {
 
 	/**
 	 * Test case for {@see WebhookEventFactory::createFromRequest()} with an unsupported webhook header.
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	public function testCreateFromRequestUnsupportedHeader(): void {
 		$this->expectExceptionObject(new InvalidWebhookRequestException(
@@ -42,7 +42,7 @@ class WebhookEventFactoryTest extends TestCase {
 
 	/**
 	 * Test case for {@see WebhookEventFactory::createFromRequest()} with an invalid payload
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	public function testCreateFromRequestInvalidPayload(): void {
 		$exception = new \JsonException('Syntax', JSON_ERROR_SYNTAX);
@@ -60,7 +60,7 @@ class WebhookEventFactoryTest extends TestCase {
 
 	/**
 	 * Test case for {@see WebhookEventFactory::createFromRequest()} with a payload mismatch.
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	public function testCreateFromRequestPayloadMismatch(): void {
 		$this->expectExceptionObject(new InvalidWebhookRequestException(
@@ -76,7 +76,7 @@ class WebhookEventFactoryTest extends TestCase {
 
 	/**
 	 * Test case for {@see WebhookEventFactory::createFromRequest()}.
-	 * @since $ver$
+	 * @since 1.0.0
 	 */
 	public function testCreateFromRequest(): void {
 		$payload = ['object_kind' => 'build'];
