@@ -1,7 +1,7 @@
 {
 	"name": "iwink/gitlab-webhook-bundle",
 	"type": "symfony-bundle",
-	"description": "GitLab Webhook Symfony bundle.",
+	"description": "A Symfony bundle to process GitLab webhooks.",
 	"keywords": [
 		"Symfony",
 		"GitLab",
