@@ -1,5 +1,9 @@
 # GitLab Webhook Bundle
 
+[![License](https://poser.pugx.org/iwink/gitlab-webhook-bundle/license.png)](https://packagist.org/packages/iwink/gitlab-webhook-bundle)
+[![Tag](https://img.shields.io/github/v/tag/iwink/gitlab-webhook-bundle)](https://github.com/iwink/gitlab-webhook-bundle/releases)
+[![Build Status](https://img.shields.io/github/workflow/status/iwink/gitlab-webhook-bundle/Tests?label=phpunit)](https://github.com/iwink/gitlab-webhook-bundle/actions?query=workflow%3A%22Tests%22)
+
 Symfony bundle to process [GitLab webhooks](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html).
 
 ## Installation
