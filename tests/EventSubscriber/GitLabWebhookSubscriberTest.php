@@ -169,7 +169,7 @@ class GitLabWebhookSubscriberTest extends TestCase {
 	 * @since 1.0.0
 	 */
 	public function testOnControllerAnnotationMismatch(): void {
-		$this->expectExceptionObject(new BadRequestHttpException('This webhook doesn\'t support the "job" event.'));
+		$this->expectExceptionObject(new BadRequestHttpException('This webhook does not support the "job" event.'));
 
 		$payload = ['object_kind' => 'build'];
 		$request = Request::create('/', 'POST', [], [], [], [], \json_encode($payload));
