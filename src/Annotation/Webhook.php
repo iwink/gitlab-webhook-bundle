@@ -17,6 +17,13 @@ final class Webhook {
 	private string $event;
 
 	/**
+	 * Optional secret token.
+	 * @since $ver$
+	 * @var string|null
+	 */
+	private ?string $token;
+
+	/**
 	 * Creates a new annotation.
 	 * @since 1.0.0
 	 * @param mixed[] $data The data.
@@ -28,6 +35,7 @@ final class Webhook {
 		}
 
 		$this->event = $event;
+		$this->token = $data['token'] ?? null;
 	}
 
 	/**
@@ -37,5 +45,14 @@ final class Webhook {
 	 */
 	public function getEvent(): string {
 		return $this->event;
+	}
+
+	/**
+	 * Returns the token.
+	 * @since $ver$
+	 * @return string|null The token.
+	 */
+	public function getToken(): ?string {
+		return $this->token;
 	}
 }
