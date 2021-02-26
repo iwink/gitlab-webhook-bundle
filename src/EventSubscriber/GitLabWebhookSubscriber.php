@@ -15,9 +15,11 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\ControllerArgumentsEvent;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;
 use Symfony\Component\HttpKernel\Event\ExceptionEvent;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
+use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 
 /**
  * Event subscriber to inject {@see WebhookEvent} instances on controller actions.
@@ -79,9 +81,17 @@ class GitLabWebhookSubscriber implements EventSubscriberInterface {
 				static fn(object $annotation): bool => $annotation instanceof Webhook
 			);
 
+			// Resolve events
+			$webhookEvents = [];
+			foreach ($annotations as $annotation) {
+				$webhookEvents[$event = $annotation->getEvent()] ??= [];
+				if (null !== ($token = $annotation->getToken())) {
+					$webhookEvents[$event][] = $token;
+				}
+			}
+
 			// Resolve event types
-			$webhookEventTypes = array_map(static fn(Webhook $webhook): string => $webhook->getEvent(), $annotations);
-			$attributes->set('_has_gitlab_event', !empty($webhookEventTypes));
+			$attributes->set('_has_gitlab_event', !empty($webhookEvents));
 			if (!$attributes->getBoolean('_has_gitlab_event', false)) {
 				return;
 			}
@@ -94,12 +104,26 @@ class GitLabWebhookSubscriber implements EventSubscriberInterface {
 
 				// Create an event based on the request and check if it's valid
 				$webhookEvent = WebhookEventFactory::createFromRequest($request);
-				$webhookEvents = array_map([WebhookEventResolver::class, 'resolveClassByType'], $webhookEventTypes);
-				if (!\in_array(get_class($webhookEvent), $webhookEvents, true)) {
+				$webhookEventClasses = array_map([WebhookEventResolver::class, 'resolveClassByType'], array_keys($webhookEvents));
+				if (!\in_array($eventClass = get_class($webhookEvent), $webhookEventClasses, true)) {
 					throw new BadRequestHttpException(sprintf(
-						'This webhook doesn\'t support the "%s" event.',
-						WebhookEventResolver::resolveTypeByClass(get_class($webhookEvent))
+						'This webhook does not support the "%s" event.',
+						WebhookEventResolver::resolveTypeByClass($eventClass)
 					));
+				}
+
+				// Validate token if necessary
+				$token = $request->headers->get('X-Gitlab-Token');
+				$tokens = $webhookEvents[WebhookEventResolver::resolveTypeByClass($eventClass)] ?? [];
+
+				// Token required but not present
+				if (empty($token) && !empty($tokens)) {
+					throw new UnauthorizedHttpException('GitLab secret token', 'Missing secret token.');
+				}
+
+				// Token required and incorrect
+				if (!empty($token) && !\in_array($token, $tokens, true)) {
+					throw new AccessDeniedHttpException('Invalid secret token.');
 				}
 
 				// Store the event on the request attributes
