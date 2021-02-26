@@ -19,7 +19,7 @@ class WebhookController {
 	/**
 	 * Annotated action.
 	 * @since 1.0.0
-	 * @Webhook(event="pipeline")
+	 * @Webhook("pipeline", token="token")
 	 */
 	public function annotation(): void {
 	}
