@@ -84,10 +84,8 @@ class GitLabWebhookSubscriber implements EventSubscriberInterface {
 			// Resolve events
 			$webhookEvents = [];
 			foreach ($annotations as $annotation) {
-				$webhookEvents[$event = $annotation->getEvent()] ??= [];
-				if (null !== ($token = $annotation->getToken())) {
-					$webhookEvents[$event][] = $token;
-				}
+				$tokens = $webhookEvents[$event = $annotation->getEvent()] ??= [];
+				$webhookEvents[$event] = array_merge($tokens, $annotation->getTokens());
 			}
 
 			// Resolve event types
@@ -122,7 +120,7 @@ class GitLabWebhookSubscriber implements EventSubscriberInterface {
 				}
 
 				// Token required and incorrect
-				if (!empty($token) && !\in_array($token, $tokens, true)) {
+				if (!empty($token) && !empty($tokens) && !\in_array($token, $tokens, true)) {
 					throw new AccessDeniedHttpException('Invalid secret token.');
 				}
 
