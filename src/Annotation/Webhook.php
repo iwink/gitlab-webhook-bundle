@@ -17,11 +17,11 @@ final class Webhook {
 	private string $event;
 
 	/**
-	 * Optional secret token.
+	 * Optional secret tokens.
 	 * @since $ver$
-	 * @var string|null
+	 * @var string[]
 	 */
-	private ?string $token;
+	private array $tokens;
 
 	/**
 	 * Creates a new annotation.
@@ -35,7 +35,7 @@ final class Webhook {
 		}
 
 		$this->event = $event;
-		$this->token = $data['token'] ?? null;
+		$this->tokens = $data['tokens'] ?? [];
 	}
 
 	/**
@@ -48,11 +48,11 @@ final class Webhook {
 	}
 
 	/**
-	 * Returns the token.
+	 * Returns the tokens.
 	 * @since $ver$
-	 * @return string|null The token.
+	 * @return string[]] The tokens.
 	 */
-	public function getToken(): ?string {
-		return $this->token;
+	public function getTokens(): array {
+		return $this->tokens;
 	}
 }
