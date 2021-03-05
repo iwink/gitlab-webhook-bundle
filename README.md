@@ -60,6 +60,57 @@ on the typehint (`PipelineEvent`) of the argument, the argument's name doesn't m
 expensive part of the webhook is scheduled and executed after a response has been sent by the 
 `Iwink\GitLabWebhookBundle\Scheduler::schedule()` method.
 
+### Secured webhooks
+
+GitLab has the option to secure a webhook with a 
+[secret token](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#secret-token). You can define these 
+secret tokens in a webhook annotation:
+
+```php
+<?php
+
+namespace App\Controller;
+
+use Iwink\GitLabWebhookBundle\Annotation\Webhook;
+use Iwink\GitLabWebhookBundle\Event\PipelineEvent;
+use Iwink\GitLabWebhookBundle\Scheduler;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Routing\Annotation\Route;
+
+/**
+ * @Route("/webhook", name="webhook_")
+ */
+class WebhookController {
+    /**
+     * @Route("/pipeline", name="pipeline")
+     * @Webhook("pipeline", tokens={"secret_token"})
+     */
+    public function pipeline(PipelineEvent $event, Scheduler $scheduler): JsonResponse {
+        // Handle request
+    }
+
+    public function expensiveOperation(string $name, bool $valid): void {
+        // Does something expensive
+    }
+}
+
+```
+
+The received `Pipeline Hook` request should now contain the secret token, otherwise the request fails. The `tokens` 
+should be defined as an array because it's possible to define multiple tokens for the same annotation since multiple 
+GitLab projects might trigger the same webhook. The tokens can also be defined as a 
+[configuration parameter](https://symfony.com/doc/current/configuration.html#configuration-parameters) using the 
+`%parameter.name%` format: `@Webhook("pipeline", tokens={"%gitlab.secret_token%"})`. Since parameters can contain 
+[environment variables](https://symfony.com/doc/current/configuration.html#configuration-based-on-environment-variables),
+configuring the secrets is very flexible.
+
+#### Caveat
+
+Because Symfony caches the annotations, and the file defining the annotation is not changed when updating a parameter, 
+you should manually clear the cache after changing a secret parameter's value. This will only ever happen in the `dev` 
+environment because in the `prod` environment the container is always cached (everytime your code changes, you will need 
+to clear the cache). 
+
 ### Multiple webhooks
 
 It's possible to register multiple webhooks to a single controller by using multiple `@Webhook` annotations:
