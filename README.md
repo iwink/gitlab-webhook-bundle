@@ -73,7 +73,6 @@ namespace App\Controller;
 
 use Iwink\GitLabWebhookBundle\Annotation\Webhook;
 use Iwink\GitLabWebhookBundle\Event\PipelineEvent;
-use Iwink\GitLabWebhookBundle\Scheduler;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -85,12 +84,8 @@ class WebhookController {
      * @Route("/pipeline", name="pipeline")
      * @Webhook("pipeline", tokens={"secret_token"})
      */
-    public function pipeline(PipelineEvent $event, Scheduler $scheduler): JsonResponse {
+    public function pipeline(PipelineEvent $event): JsonResponse {
         // Handle request
-    }
-
-    public function expensiveOperation(string $name, bool $valid): void {
-        // Does something expensive
     }
 }
 
