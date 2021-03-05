@@ -2,6 +2,9 @@
 
 namespace Iwink\GitLabWebhookBundle;
 
+use Iwink\GitLabWebhookBundle\DependencyInjection\Compiler\RegisterParameterAwareReaderPass;
+use Symfony\Component\DependencyInjection\Compiler\PassConfig;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
@@ -9,4 +12,14 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  * @since 1.0.0
  */
 final class IwinkGitLabWebhookBundle extends Bundle {
+	/**
+	 * @inheritDoc
+	 * @since $ver$
+	 * @codeCoverageIgnore
+	 */
+	public function build(ContainerBuilder $container): void {
+		parent::build($container);
+
+		$container->addCompilerPass(new RegisterParameterAwareReaderPass(), PassConfig::TYPE_OPTIMIZE);
+	}
 }
