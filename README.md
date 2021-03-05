@@ -140,7 +140,7 @@ class WebhookController {
     public function pipeline(WebhookEvent $event, Scheduler $scheduler): JsonResponse {
         if (
             ($event instanceof PushEvent && 'some/project' === $event->getProject()['name'])
-            || ($event instanceof MergeRequestEvent && 'success' === $event['object_attributes']['status'])
+            || ($event instanceof MergeRequestEvent && 'success' === $event->getObjectAttributes()['status'])
         ) {
             $scheduler->schedule([$this, 'expensiveOperation']);
         }
