@@ -91,7 +91,7 @@ class WebhookController {
 
 ```
 
-The received `Pipeline Hook` request should now contain the secret token, otherwise the request fails. The `tokens` 
+The received `Pipeline Hook` request should now contain the secret token (provided by the `X-GitLab-Token` header), otherwise the request fails. The `tokens` 
 should be defined as an array because it's possible to define multiple tokens for the same annotation since multiple 
 GitLab projects might trigger the same webhook. The tokens can also be defined as a 
 [configuration parameter](https://symfony.com/doc/current/configuration.html#configuration-parameters) using the 
