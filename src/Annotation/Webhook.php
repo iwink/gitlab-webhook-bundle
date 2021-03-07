@@ -50,7 +50,7 @@ final class Webhook {
 	/**
 	 * Returns the tokens.
 	 * @since $ver$
-	 * @return string[]] The tokens.
+	 * @return string[] The tokens.
 	 */
 	public function getTokens(): array {
 		return $this->tokens;
