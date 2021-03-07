@@ -84,7 +84,7 @@ class GitLabWebhookSubscriber implements EventSubscriberInterface {
 			// Resolve events
 			$webhookEvents = [];
 			foreach ($annotations as $annotation) {
-				$tokens = $webhookEvents[$event = $annotation->getEvent()] ??= [];
+				$tokens = ($webhookEvents[$event = $annotation->getEvent()] ??= []);
 				$webhookEvents[$event] = array_merge($tokens, $annotation->getTokens());
 			}
 
