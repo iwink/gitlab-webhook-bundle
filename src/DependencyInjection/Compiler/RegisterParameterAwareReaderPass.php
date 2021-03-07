@@ -19,7 +19,7 @@ class RegisterParameterAwareReaderPass implements CompilerPassInterface {
 	 */
 	public function process(ContainerBuilder $container): void {
 		try {
-			$originalDefinition = $container->findDefinition($id = 'annotations.reader');
+			$originalDefinition = $container->findDefinition('annotations.reader');
 			if (AnnotationReader::class === $originalDefinition->getClass()) {
 				$definition = $container->getDefinition(ParameterAwareReader::class);
 				$definition->setMethodCalls($originalDefinition->getMethodCalls());
