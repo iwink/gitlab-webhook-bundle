@@ -16,9 +16,11 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\ControllerArgumentsEvent;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;
 use Symfony\Component\HttpKernel\Event\ExceptionEvent;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 /**
@@ -167,11 +169,42 @@ class GitLabWebhookSubscriberTest extends TestCase {
 	 * @since 1.0.0
 	 */
 	public function testOnControllerAnnotationMismatch(): void {
-		$this->expectExceptionObject(new BadRequestHttpException('This webhook doesn\'t support the "job" event.'));
+		$this->expectExceptionObject(new BadRequestHttpException('This webhook does not support the "job" event.'));
 
 		$payload = ['object_kind' => 'build'];
 		$request = Request::create('/', 'POST', [], [], [], [], \json_encode($payload));
 		$request->headers->set('X-Gitlab-Event', ['Job Hook']);
+		$event = $this->createControllerEvent(WebhookController::class . '::annotation', $request);
+
+		$this->subscriber->onController($event);
+	}
+
+	/**
+	 * Test case for {@see GitLabWebhookSubscriber::onController()} with an unauthorized request.
+	 * @since $ver$
+	 */
+	public function testOnControllerUnauthorized(): void {
+		$this->expectExceptionObject(new UnauthorizedHttpException('GitLab secret token', 'Missing secret token.'));
+
+		$payload = ['object_kind' => 'pipeline'];
+		$request = Request::create('/', 'POST', [], [], [], [], \json_encode($payload));
+		$request->headers->set('X-Gitlab-Event', ['Pipeline Hook']);
+		$event = $this->createControllerEvent(WebhookController::class . '::annotation', $request);
+
+		$this->subscriber->onController($event);
+	}
+
+	/**
+	 * Test case for {@see GitLabWebhookSubscriber::onController()} with an access denied request.
+	 * @since $ver$
+	 */
+	public function testOnControllerAccessDenied(): void {
+		$this->expectExceptionObject(new AccessDeniedHttpException('Invalid secret token.'));
+
+		$payload = ['object_kind' => 'pipeline'];
+		$request = Request::create('/', 'POST', [], [], [], [], \json_encode($payload));
+		$request->headers->set('X-Gitlab-Event', ['Pipeline Hook']);
+		$request->headers->set('X-Gitlab-Token', 'invalid');
 		$event = $this->createControllerEvent(WebhookController::class . '::annotation', $request);
 
 		$this->subscriber->onController($event);
@@ -185,6 +218,7 @@ class GitLabWebhookSubscriberTest extends TestCase {
 		$payload = ['object_kind' => 'pipeline'];
 		$request = Request::create('/', 'POST', [], [], [], [], \json_encode($payload));
 		$request->headers->set('X-Gitlab-Event', ['Pipeline Hook']);
+		$request->headers->set('X-Gitlab-Token', 'token');
 		$event = $this->createControllerEvent(WebhookController::class . '::annotation', $request);
 
 		$this->subscriber->onController($event);

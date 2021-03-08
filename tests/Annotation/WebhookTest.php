@@ -20,6 +20,15 @@ class WebhookTest extends TestCase {
 	}
 
 	/**
+	 * Test case for {@see Webhook::getTokens()}.
+	 * @since $ver$
+	 */
+	public function testGetTokens(): void {
+		self::assertSame(['token'], (new Webhook(['event' => 'type', 'tokens' => ['token']]))->getTokens());
+		self::assertEmpty((new Webhook(['value' => 'type']))->getTokens());
+	}
+
+	/**
 	 * Test case for {@see Webhook::__construct()} with missing property.
 	 * @since 1.0.0
 	 */
