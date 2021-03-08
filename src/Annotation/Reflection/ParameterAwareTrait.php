@@ -6,12 +6,12 @@ use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
 /**
  * Resolves parameters in doc comments.
- * @since $ver$
+ * @since 1.1.0
  */
 trait ParameterAwareTrait {
 	/**
 	 * The parameter bag used to resolve parameters.
-	 * @since $ver$
+	 * @since 1.1.0
 	 * @var ParameterBagInterface|null
 	 */
 	private ?ParameterBagInterface $parameterBag = null;
@@ -21,7 +21,7 @@ trait ParameterAwareTrait {
 	 *
 	 * Tries to resolves parameters in doc comments.
 	 *
-	 * @since $ver$
+	 * @since 1.1.0
 	 */
 	public function getDocComment() {
 		$comment = parent::getDocComment();
@@ -47,7 +47,7 @@ trait ParameterAwareTrait {
 
 	/**
 	 * Sets the parameter bag.
-	 * @since $ver$
+	 * @since 1.1.0
 	 * @param ParameterBagInterface|null $parameterBag The parameter bag.
 	 * @return $this Instance.
 	 */

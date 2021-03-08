@@ -10,12 +10,12 @@ use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 
 /**
  * Registers a parameter aware annotation reader.
- * @since $ver$
+ * @since 1.1.0
  */
 class RegisterParameterAwareReaderPass implements CompilerPassInterface {
 	/**
 	 * @inheritDoc
-	 * @since $ver$
+	 * @since 1.1.0
 	 */
 	public function process(ContainerBuilder $container): void {
 		try {

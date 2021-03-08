@@ -9,12 +9,12 @@ use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
 /**
  * Unit tests for {@see ParameterAwareTrait}.
- * @since $ver$
+ * @since 1.1.0
  */
 class ParameterAwareTraitTest extends TestCase {
 	/**
 	 * Data provider for {@see ParameterAwareTrait::getDocComment()} without replacing content.
-	 * @since $ver$
+	 * @since 1.1.0
 	 * @return mixed[] The data set.
 	 */
 	public function getDocCommentNoReplacementDataProvider(): array {
@@ -27,7 +27,7 @@ class ParameterAwareTraitTest extends TestCase {
 
 	/**
 	 * Test case for {@see ParameterAwareTrait::getDocComment()} without replacing content.
-	 * @since $ver$
+	 * @since 1.1.0
 	 * @param string|false $docComment Doc comment.
 	 * @param ParameterBagInterface|null $parameterBag Parameter bag.
 	 * @dataProvider getDocCommentNoReplacementDataProvider Data provider.
@@ -40,7 +40,7 @@ class ParameterAwareTraitTest extends TestCase {
 
 	/**
 	 * Data provider for {@see ParameterAwareTrait::getDocComment()}.
-	 * @since $ver$
+	 * @since 1.1.0
 	 * @return mixed[] The data set.
 	 */
 	public function getDocCommentDataProvider(): array {
@@ -80,7 +80,7 @@ class ParameterAwareTraitTest extends TestCase {
 
 	/**
 	 * Test case for {@see ParameterAwareTrait::getDocComment()}.
-	 * @since $ver$
+	 * @since 1.1.0
 	 * @param string $docComment Original doc comment.
 	 * @param string $expected Replaced doc comment.
 	 * @param mixed[] $parameters Parameters for the parameter bag.
@@ -95,7 +95,7 @@ class ParameterAwareTraitTest extends TestCase {
 
 /**
  * Base reflection class.
- * @since $ver$
+ * @since 1.1.0
  */
 abstract class Reflection {
 	private $docComment;
@@ -111,7 +111,7 @@ abstract class Reflection {
 
 /**
  * Parameter aware reflection to test.
- * @since $ver$
+ * @since 1.1.0
  */
 class ParameterAwareReflection extends Reflection {
 	use ParameterAwareTrait;

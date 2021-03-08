@@ -21,7 +21,7 @@ class WebhookTest extends TestCase {
 
 	/**
 	 * Test case for {@see Webhook::getTokens()}.
-	 * @since $ver$
+	 * @since 1.1.0
 	 */
 	public function testGetTokens(): void {
 		self::assertSame(['token'], (new Webhook(['event' => 'type', 'tokens' => ['token']]))->getTokens());

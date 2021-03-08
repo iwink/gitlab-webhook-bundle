@@ -18,7 +18,7 @@ final class Webhook {
 
 	/**
 	 * Optional secret tokens.
-	 * @since $ver$
+	 * @since 1.1.0
 	 * @var string[]
 	 */
 	private array $tokens;
@@ -49,7 +49,7 @@ final class Webhook {
 
 	/**
 	 * Returns the tokens.
-	 * @since $ver$
+	 * @since 1.1.0
 	 * @return string[] The tokens.
 	 */
 	public function getTokens(): array {

@@ -12,12 +12,12 @@ use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 
 /**
  * Unit tests for {@see RegisterParameterAwareReaderPass}.
- * @since $ver$
+ * @since 1.1.0
  */
 class RegisterParameterAwareReaderPassTest extends TestCase {
 	/**
 	 * Test case for {@see RegisterParameterAwareReaderPass::proces()} without the original definition.
-	 * @since $ver$
+	 * @since 1.1.0
 	 */
 	public function testProcessNoOriginalDefinition(): void {
 		$container = $this->createMock(ContainerBuilder::class);
@@ -32,7 +32,7 @@ class RegisterParameterAwareReaderPassTest extends TestCase {
 
 	/**
 	 * Test case for {@see RegisterParameterAwareReaderPass::proces()}.
-	 * @since $ver$
+	 * @since 1.1.0
 	 */
 	public function testProcess(): void {
 		$container = new ContainerBuilder();

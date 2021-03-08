@@ -181,7 +181,7 @@ class GitLabWebhookSubscriberTest extends TestCase {
 
 	/**
 	 * Test case for {@see GitLabWebhookSubscriber::onController()} with an unauthorized request.
-	 * @since $ver$
+	 * @since 1.1.0
 	 */
 	public function testOnControllerUnauthorized(): void {
 		$this->expectExceptionObject(new UnauthorizedHttpException('GitLab secret token', 'Missing secret token.'));
@@ -196,7 +196,7 @@ class GitLabWebhookSubscriberTest extends TestCase {
 
 	/**
 	 * Test case for {@see GitLabWebhookSubscriber::onController()} with an access denied request.
-	 * @since $ver$
+	 * @since 1.1.0
 	 */
 	public function testOnControllerAccessDenied(): void {
 		$this->expectExceptionObject(new AccessDeniedHttpException('Invalid secret token.'));

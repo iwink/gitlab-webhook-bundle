@@ -14,7 +14,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 final class IwinkGitLabWebhookBundle extends Bundle {
 	/**
 	 * @inheritDoc
-	 * @since $ver$
+	 * @since 1.1.0
 	 * @codeCoverageIgnore
 	 */
 	public function build(ContainerBuilder $container): void {

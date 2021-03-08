@@ -12,13 +12,13 @@ use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
 /**
  * Annotation reader that is aware of container parameters.
- * @since $ver$
+ * @since 1.1.0
  * @codeCoverageIgnore
  */
 class ParameterAwareReader extends AnnotationReader {
 	/**
 	 * Parameter bag.
-	 * @since $ver$
+	 * @since 1.1.0
 	 * @var ParameterBagInterface
 	 */
 	private ParameterBagInterface $parameterBag;
@@ -37,7 +37,7 @@ class ParameterAwareReader extends AnnotationReader {
 
 	/**
 	 * @inheritDoc
-	 * @since $ver$
+	 * @since 1.1.0
 	 */
 	public function getClassAnnotations(\ReflectionClass $class): array {
 		$reflection = (new ReflectionClass($class->name))->setParameterBag($this->parameterBag);
@@ -47,7 +47,7 @@ class ParameterAwareReader extends AnnotationReader {
 
 	/**
 	 * @inheritDoc
-	 * @since $ver$
+	 * @since 1.1.0
 	 */
 	public function getMethodAnnotations(\ReflectionMethod $method): array {
 		$reflection = (new ReflectionMethod($method->class, $method->getName()))->setParameterBag($this->parameterBag);
@@ -57,7 +57,7 @@ class ParameterAwareReader extends AnnotationReader {
 
 	/**
 	 * @inheritDoc
-	 * @since $ver$
+	 * @since 1.1.0
 	 */
 	public function getPropertyAnnotations(\ReflectionProperty $property): array {
 		$reflection = (new ReflectionProperty($property->class, $property->getName()))->setParameterBag($this->parameterBag);
