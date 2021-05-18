@@ -110,9 +110,9 @@ abstract class WebhookEvent implements \ArrayAccess, \Countable, \IteratorAggreg
 	/**
 	 * Returns the event's object kind.
 	 * @since 1.0.0
-	 * @return string The object kind.
+	 * @return string|null The object kind.
 	 */
-	public static function getObjectKind(): string {
+	public static function getObjectKind(): ?string {
 		return static::OBJECT_KIND;
 	}
 }
