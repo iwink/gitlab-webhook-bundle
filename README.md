@@ -168,5 +168,6 @@ The following webhooks are supported:
 - [**pipeline**](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#pipeline-events) ([`Iwink\GitLabWebhookBundle\Event\PipelineEvent`](src/Event/PipelineEvent.php))
 - [**push**](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#push-events) ([`Iwink\GitLabWebhookBundle\Event\PushEvent`](src/Event/PushEvent.php))
 - [**release**](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#release-events) ([`Iwink\GitLabWebhookBundle\Event\ReleaseEvent`](src/Event/ReleaseEvent.php))
+- [**system**](https://docs.gitlab.com/ee/system_hooks/system_hooks.html) ([`Iwink\GitLabWebhookBundle\Event\SystemEvent`](src/Event/SystemEvent.php))
 - [**tag**](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#tag-events) ([`Iwink\GitLabWebhookBundle\Event\TagEvent`](src/Event/TagEvent.php))
 - [**wiki page**](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#wiki-page-events) ([`Iwink\GitLabWebhookBundle\Event\WikiPageEvent`](src/Event/WikiPageEvent.php))
