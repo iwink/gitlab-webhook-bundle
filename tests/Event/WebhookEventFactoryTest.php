@@ -64,7 +64,7 @@ class WebhookEventFactoryTest extends TestCase {
 	 */
 	public function testCreateFromRequestPayloadMismatch(): void {
 		$this->expectExceptionObject(new InvalidWebhookRequestException(
-			'Webhook payload object_kind "pipeline" is invalid for the "job" event.'
+			'Webhook payload is invalid for the "job" event.'
 		));
 
 		$payload = ['object_kind' => 'pipeline'];

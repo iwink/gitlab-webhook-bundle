@@ -5,6 +5,29 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- Support for the following GitLab system hooks:
+  - `group_create`
+  - `group_destroy`
+  - `group_rename`
+  - `key_create`
+  - `key_destroy`
+  - `project_create`
+  - `project_destroy`
+  - `project_rename`
+  - `project_transfer`
+  - `project_update`
+  - `repository_update`
+  - `user_add_to_group`
+  - `user_add_to_team`
+  - `user_create`
+  - `user_destroy`
+  - `user_failed_login`
+  - `user_remove_from_group`
+  - `user_remove_from_team`
+  - `user_rename`
+  - `user_update_for_group`
+  - `user_update_for_team`
 
 ## [1.1.0] - 2021-03-08
 ### Added

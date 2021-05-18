@@ -38,6 +38,20 @@ abstract class WebhookEvent implements \ArrayAccess, \Countable, \IteratorAggreg
 	}
 
 	/**
+	 * Create a new webhook event.
+	 * @since $ver$
+	 * @param mixed[] $data The event data.
+	 * @return static The event.
+	 */
+	public static function create(array $data): self {
+		if (($data['object_kind'] ?? null) !== static::getObjectKind()) {
+			throw new \InvalidArgumentException('Invalid "object_kind" provided.');
+		}
+
+		return new static($data);
+	}
+
+	/**
 	 * @inheritDoc
 	 * @since 1.0.0
 	 */

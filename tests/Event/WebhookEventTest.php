@@ -11,6 +11,20 @@ use Iwink\GitLabWebhookBundle\Tests\TestCase;
  */
 class WebhookEventTest extends TestCase {
 	/**
+	 * Test case for {@see WebhookEvent::create()}.
+	 * @since $ver$
+	 */
+	public function testCreate(): void {
+		self::assertInstanceOf(
+			ConcreteWebhookEvent::class,
+			ConcreteWebhookEvent::create(['object_kind' => 'concrete'])
+		);
+
+		$this->expectException(\InvalidArgumentException::class);
+		ConcreteWebhookEvent::create([]);
+	}
+
+	/**
 	 * Test case for {@see WebhookEvent::count()}.
 	 * @since 1.0.0
 	 */

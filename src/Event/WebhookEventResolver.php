@@ -22,6 +22,7 @@ final class WebhookEventResolver {
 		PipelineEvent::class,
 		PushEvent::class,
 		ReleaseEvent::class,
+		SystemEvent::class,
 		TagEvent::class,
 		WikiPageEvent::class,
 	];
