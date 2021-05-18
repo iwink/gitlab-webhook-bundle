@@ -65,6 +65,14 @@ class WebhookEventTest extends TestCase {
 	}
 
 	/**
+	 * Test case for {@see WebhookEvent::getObjectKind()}.
+	 * @since 1.0.0
+	 */
+	public function testGetObjectKind(): void {
+		self::assertSame('concrete', ConcreteWebhookEvent::getObjectKind());
+	}
+
+	/**
 	 * Test case for {@see WebhookEvent::validateData()}.
 	 * @since $ver$
 	 */

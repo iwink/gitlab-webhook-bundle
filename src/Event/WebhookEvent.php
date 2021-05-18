@@ -108,12 +108,21 @@ abstract class WebhookEvent implements \ArrayAccess, \Countable, \IteratorAggreg
 	}
 
 	/**
+	 * Returns the event's object kind.
+	 * @since 1.0.0
+	 * @return string The object kind.
+	 */
+	public static function getObjectKind(): string {
+		return static::OBJECT_KIND;
+	}
+
+	/**
 	 * Validates request data.
 	 * @since $ver$
 	 * @param array $data The data.
 	 * @return bool True if valid.
 	 */
 	public static function validateData(array $data): bool {
-		return ($data['object_kind'] ?? null) === static::OBJECT_KIND;
+		return ($data['object_kind'] ?? null) === static::getObjectKind();
 	}
 }
