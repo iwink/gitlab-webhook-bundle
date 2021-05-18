@@ -38,11 +38,9 @@ class WebhookEventFactory {
 		}
 
 		// Validate data against event
-		$objectKind = $data['object_kind'] ?? null;
-		if ($objectKind !== $eventClass::getObjectKind()) {
+		if (false === $eventClass::validateData($data)) {
 			throw new InvalidWebhookRequestException(sprintf(
-				'Webhook payload object_kind "%s" is invalid for the "%s" event.',
-				$objectKind,
+				'Webhook payload is invalid for the "%s" event.',
 				WebhookEventResolver::resolveTypeByClass($eventClass),
 			));
 		}
