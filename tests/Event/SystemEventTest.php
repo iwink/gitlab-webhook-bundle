@@ -11,11 +11,16 @@ use Iwink\GitLabWebhookBundle\Tests\TestCase;
  */
 class SystemEventTest extends TestCase {
 	/**
-	 * Test case for {@see SystemEvent::validateData()}.
+	 * Test case for {@see SystemEvent::create()}.
 	 * @since $ver$
 	 */
-	public function testValidateData(): void {
-		self::assertTrue(SystemEvent::validateData(['event_name' => 'group_create']));
-		self::assertFalse(SystemEvent::validateData([]));
+	public function testCreate(): void {
+		self::assertInstanceOf(
+			SystemEvent::class,
+			SystemEvent::create(['event_name' => 'group_create'])
+		);
+
+		$this->expectException(\InvalidArgumentException::class);
+		SystemEvent::create([]);
 	}
 }

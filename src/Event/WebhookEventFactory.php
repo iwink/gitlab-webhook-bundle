@@ -37,14 +37,18 @@ class WebhookEventFactory {
 			throw new InvalidWebhookRequestException('Could not parse webhook payload.', $e->getCode(), $e);
 		}
 
-		// Validate data against event
-		if (false === $eventClass::validateData($data)) {
-			throw new InvalidWebhookRequestException(sprintf(
-				'Webhook payload is invalid for the "%s" event.',
-				WebhookEventResolver::resolveTypeByClass($eventClass),
-			));
+		// Create the event.
+		try {
+			return $eventClass::create($data);
+		} catch (\InvalidArgumentException $e) {
+			throw new InvalidWebhookRequestException(
+				sprintf(
+					'Webhook payload is invalid for the "%s" event.',
+					WebhookEventResolver::resolveTypeByClass($eventClass),
+				),
+				$e->getCode(),
+				$e
+			);
 		}
-
-		return new $eventClass($data);
 	}
 }

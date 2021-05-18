@@ -46,9 +46,12 @@ class SystemEvent extends WebhookEvent {
 	 * @inheritDoc
 	 * @since $ver$
 	 */
-	public static function validateData(array $data): bool {
+	public static function create(array $data): self {
 		$eventName = $data['event_name'] ?? null;
+		if (!in_array($eventName, self::SUPPORTED_EVENT_NAMES, true)) {
+			throw new \InvalidArgumentException('Invalid "event_name" provided.');
+		}
 
-		return in_array($eventName, self::SUPPORTED_EVENT_NAMES, true);
+		return new static($data);
 	}
 }
