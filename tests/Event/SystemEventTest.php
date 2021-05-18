@@ -7,12 +7,12 @@ use Iwink\GitLabWebhookBundle\Tests\TestCase;
 
 /**
  * Unit tests for {@see SystemEvent}.
- * @since $ver$
+ * @since 1.2.0
  */
 class SystemEventTest extends TestCase {
 	/**
 	 * Test case for {@see SystemEvent::create()}.
-	 * @since $ver$
+	 * @since 1.2.0
 	 */
 	public function testCreate(): void {
 		self::assertInstanceOf(

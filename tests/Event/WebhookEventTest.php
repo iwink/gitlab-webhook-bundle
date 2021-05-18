@@ -12,7 +12,7 @@ use Iwink\GitLabWebhookBundle\Tests\TestCase;
 class WebhookEventTest extends TestCase {
 	/**
 	 * Test case for {@see WebhookEvent::create()}.
-	 * @since $ver$
+	 * @since 1.2.0
 	 */
 	public function testCreate(): void {
 		self::assertInstanceOf(

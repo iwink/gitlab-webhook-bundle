@@ -4,18 +4,18 @@ namespace Iwink\GitLabWebhookBundle\Event;
 
 /**
  * A GitLab system event {@link https://docs.gitlab.com/ce/system_hooks/system_hooks.html}.
- * @since $ver$
+ * @since 1.2.0
  */
 class SystemEvent extends WebhookEvent {
 	/**
 	 * @inheritDoc
-	 * @since $ver$
+	 * @since 1.2.0
 	 */
 	protected const EVENT_HEADER = 'System Hook';
 
 	/**
 	 * List of supported event names.
-	 * @since $ver$
+	 * @since 1.2.0
 	 * @var string[]
 	 */
 	private const SUPPORTED_EVENT_NAMES = [
@@ -44,7 +44,7 @@ class SystemEvent extends WebhookEvent {
 
 	/**
 	 * @inheritDoc
-	 * @since $ver$
+	 * @since 1.2.0
 	 */
 	public static function create(array $data): self {
 		$eventName = $data['event_name'] ?? null;

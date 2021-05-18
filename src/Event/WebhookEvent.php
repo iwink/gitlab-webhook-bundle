@@ -39,7 +39,7 @@ abstract class WebhookEvent implements \ArrayAccess, \Countable, \IteratorAggreg
 
 	/**
 	 * Create a new webhook event.
-	 * @since $ver$
+	 * @since 1.2.0
 	 * @param mixed[] $data The event data.
 	 * @return static The event.
 	 */
