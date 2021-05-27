@@ -19,6 +19,7 @@ class SystemEvent extends WebhookEvent {
 	 * @var string[]
 	 */
 	private const SUPPORTED_EVENT_NAMES = [
+		'deploykey_create',
 		'group_create',
 		'group_destroy',
 		'group_rename',
