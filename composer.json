@@ -8,6 +8,13 @@
 		"webhook"
 	],
 	"license": "MIT",
+	"authors": [
+		{
+			"name": "iWink",
+			"email": "hallo@iwink.nl",
+			"homepage": "https://www.iwink.nl/"
+		}
+	],
 	"require": {
 		"php": ">=7.4",
 		"ext-json": "*",
