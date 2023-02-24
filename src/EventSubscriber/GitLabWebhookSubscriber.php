@@ -8,6 +8,7 @@ use Iwink\GitLabWebhookBundle\Event\Exception\InvalidWebhookRequestException;
 use Iwink\GitLabWebhookBundle\Event\WebhookEvent;
 use Iwink\GitLabWebhookBundle\Event\WebhookEventFactory;
 use Iwink\GitLabWebhookBundle\Event\WebhookEventResolver;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -40,15 +41,18 @@ class GitLabWebhookSubscriber implements EventSubscriberInterface {
 	 */
 	private ReaderInterface $reader;
 
+    private ParameterBagInterface $parameterBag;
+
 	/**
 	 * Creates a new event subscriber.
 	 * @since 1.0.0
 	 * @param string $environment Application environment.
 	 * @param ReaderInterface $reader Annotation reader.
 	 */
-	public function __construct(string $environment, ReaderInterface $reader) {
+	public function __construct(string $environment, ReaderInterface $reader, ParameterBagInterface $parameterBag) {
 		$this->environment = $environment;
 		$this->reader = $reader;
+        $this->parameterBag = $parameterBag;
 	}
 
 	/**
@@ -114,10 +118,29 @@ class GitLabWebhookSubscriber implements EventSubscriberInterface {
 				$token = $request->headers->get('X-Gitlab-Token');
 				$tokens = $webhookEvents[WebhookEventResolver::resolveTypeByClass($eventClass)] ?? [];
 
+                if (empty($tokens)) {
+                    // Store the event on the request attributes
+                    $attributes->set('_gitlab_event', $webhookEvent);
+                    return;
+                }
+
 				// Token required but not present
 				if (empty($token) && !empty($tokens)) {
 					throw new UnauthorizedHttpException('GitLab secret token', 'Missing secret token.');
 				}
+
+                // Lookup tokens in the parameterBag if applicable
+                foreach ($tokens as &$requiredToken) {
+                    $requiredToken = preg_replace_callback(
+                        '/%([^%]+)%/',
+                        function (array $matches): string {
+                            $parameter = $this->parameterBag->resolveValue($matches[0]);
+
+                            return is_array($parameter) ? sprintf('{"%s"}', implode('","', $parameter)) : $parameter;
+                        },
+                        $requiredToken
+                    );
+                }
 
 				// Token required and incorrect
 				if (!empty($token) && !empty($tokens) && !\in_array($token, $tokens, true)) {
