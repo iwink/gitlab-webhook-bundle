@@ -1,15 +1,39 @@
-name: Tests
-on: [push]
+name: Unit tests
+
+on: [ push ]
+
 jobs:
     test:
         runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                php-versions: [ '7.4', '8.0', '8.1' ]
         steps:
-            - uses: actions/checkout@v2
-            - name: Install dependencies
-              uses: php-actions/composer@v5
-              with:
-                  php_version: 7.4
-            - name: Run tests
-              uses: php-actions/phpunit@v2
-              with:
-                  php_version: 7.4
+            -   uses: actions/checkout@v2
+            -   name: Install PHP
+                uses: shivammathur/setup-php@v2
+                with:
+                    php-version: ${{ matrix.php-versions }}
+
+            -   name: Check PHP Version
+                run: php -v
+
+            -   name: Validate composer.json and composer.lock
+                run: composer validate
+
+            -   name: Cache dependencies
+                id: cache
+                uses: actions/cache@v2
+                with:
+                    path: vendor
+                    key: ${{ runner.os }}-build-${{ matrix.php-versions }}-${{ hashFiles('composer.json') }}
+                    restore-keys: |
+                        ${{ runner.os }}-build-${{ matrix.php-versions }}-
+
+            -   name: Install dependencies
+                if: steps.cache.outputs.cache-hit != 'true'
+                run: composer install --prefer-dist --no-progress
+
+            -   name: Run test suite
+                run: vendor/bin/phpunit
+
