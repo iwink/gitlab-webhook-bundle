@@ -36,7 +36,7 @@ trait ParameterAwareTrait {
 				'/%([^%]+)%/',
 				function (array $matches): string {
 					if (!$this->parameterBag->has($matches[1])) {
-						return $matches[1];
+						return $matches[0];
 					}
 
 					$parameter = $this->parameterBag->resolveValue($matches[0]);
