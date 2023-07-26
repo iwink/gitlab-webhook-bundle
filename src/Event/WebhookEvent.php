@@ -88,7 +88,8 @@ abstract class WebhookEvent implements \ArrayAccess, \Countable, \IteratorAggreg
 	 * @inheritDoc
 	 * @since 1.0.0
 	 */
-	public function offsetGet($offset): mixed {
+	#[\ReturnTypeWillChange]
+	public function offsetGet($offset) {
 		return $this->data[$offset] ?? null;
 	}
 
