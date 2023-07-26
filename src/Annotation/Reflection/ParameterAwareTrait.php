@@ -23,6 +23,7 @@ trait ParameterAwareTrait {
 	 *
 	 * @since 1.1.0
 	 */
+	#[\ReturnTypeWillChange]
 	public function getDocComment() {
 		$comment = parent::getDocComment();
 		if (false === $comment || null === $this->parameterBag) {
@@ -34,8 +35,11 @@ trait ParameterAwareTrait {
 			$lines[] = preg_replace_callback(
 				'/%([^%]+)%/',
 				function (array $matches): string {
-					$parameter = $this->parameterBag->resolveValue($matches[0]);
+					if (!$this->parameterBag->has($matches[1])) {
+						return $matches[1];
+					}
 
+					$parameter = $this->parameterBag->resolveValue($matches[0]);
 					return is_array($parameter) ? sprintf('{"%s"}', implode('","', $parameter)) : $parameter;
 				},
 				$line

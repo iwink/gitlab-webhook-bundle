@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Fixed
 - 8.1 code compatibility.
+- Unknown parameters caused an exception to be thrown on replacement.
 
 ### Changed
 - Updated `doctrine/annotations` dependency to allow `^2.0`.
