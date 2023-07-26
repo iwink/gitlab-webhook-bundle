@@ -9,14 +9,14 @@ use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 
 /**
  * Unit tests for {@see ParameterAwareReader}.
- * @since $ver$
+ * @since 1.2.2
  */
 final class ParameterAwareReaderTest extends TestCase
 {
 	/**
 	 * Test case for {@see ParameterAwareReader::getMethodAnnotations()} with a PHPDoc that has a random,
 	 * non-existent parameter reference.
-	 * @since $ver$
+	 * @since 1.2.2
 	 */
 	public function testReader(): void
 	{

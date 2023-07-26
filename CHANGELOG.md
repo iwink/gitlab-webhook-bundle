@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.2.2] - 2023-07-26
 ### Fixed
 - 8.1 code compatibility.
 - Unknown parameters caused an exception to be thrown on replacement.
@@ -60,7 +62,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `release`
   - `wiki page`
 
-[Unreleased]: https://github.com/iwink/gitlab-webhook-bundle/compare/v1.2.1...main
+[Unreleased]: https://github.com/iwink/gitlab-webhook-bundle/compare/v1.2.2...main
+[1.2.2]: https://github.com/iwink/gitlab-webhook-bundle/compare/v1.2.1...v1.2.2
 [1.2.1]: https://github.com/iwink/gitlab-webhook-bundle/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/iwink/gitlab-webhook-bundle/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/iwink/gitlab-webhook-bundle/compare/v1.0.0...v1.1.0
