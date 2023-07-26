@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - 8.1 code compatibility.
 
+### Changed
+- Updated `doctrine/annotations` dependency to allow `^2.0`.
+
 ## [1.2.1] - 2021-05-27
 ### Fixed
 - Support for `SystemEvent::deploykey_create`
